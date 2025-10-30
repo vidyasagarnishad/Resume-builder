@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Resume Builder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Resume Builder</h2>
+
+<form id="resume-form">
+
+  <label for="profile-pic">Profile Picture</label>
+  <input type="file" id="profile-pic" accept="image/*" />
+  <div id="profile-pic-preview"></div>
+
+  <label for="name">Full Name</label>
+  <input type="text" id="name" placeholder="John Doe" required />
+
+  <label for="title">Job Title</label>
+  <input type="text" id="title" placeholder="Software Engineer" required />
+
+  <label for="email">Email</label>
+  <input type="email" id="email" placeholder="john@example.com" required />
+
+  <label for="phone">Phone</label>
+  <input type="tel" id="phone" placeholder="+1 123 456 7890" required />
+
+  <label for="linkedin">LinkedIn URL</label>
+  <input type="url" id="linkedin" placeholder="https://linkedin.com/in/username" />
+
+  <label for="summary">Professional Summary</label>
+  <textarea id="summary" placeholder="Brief summary about yourself..."></textarea>
+
+  <div id="education-entries" class="section">
+    <h3>Education</h3>
+  </div>
+  <button type="button" id="add-education">Add Education</button>
+
+  <div id="experience-entries" class="section">
+    <h3>Work Experience</h3>
+  </div>
+  <button type="button" id="add-experience">Add Experience</button>
+
+  <label for="skill-input" style="margin-top:25px;">Skills (Press Enter to add)</label>
+  <input type="text" id="skill-input" placeholder="Add a skill and press Enter" />
+  <div id="skills-list"></div>
+
+  <button type="submit">Generate Resume</button>
+</form>
+
+<div style="text-align:center; margin:20px;">
+  <button id="save-data">Save Data</button>
+  <button id="load-data">Load Data</button>
+  <button id="download-pdf">Download PDF</button>
+</div>
+
+<!-- Resume Preview -->
+<div id="resume" style="background:#fff; padding:30px; border-radius:8px; max-width:900px; margin: 0 auto 50px;">
+  <div style="display:flex; align-items:center; gap:20px;">
+    <div id="r-profile-pic" style="flex-shrink:0;"></div>
+    <div>
+      <h1 id="r-name">Your Name</h1>
+      <h2 id="r-title">Job Title</h2>
+      <div class="contact-info">
+        <span id="r-email"></span> | 
+        <span id="r-phone"></span> | 
+        <a href="#" id="r-linkedin" target="_blank" rel="noopener noreferrer"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="r-summary-container">
+    <h3>Professional Summary</h3>
+    <p id="r-summary"></p>
+  </div>
+
+  <div class="section" id="r-education-container">
+    <h3>Education</h3>
+    <div id="r-education"></div>
+  </div>
+
+  <div class="section" id="r-experience-container">
+    <h3>Work Experience</h3>
+    <div id="r-experience"></div>
+  </div>
+
+  <div class="section" id="r-skills-container">
+    <h3>Skills</h3>
+    <ul id="r-skills"></ul>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="script.js"></script>
+  
+</script>
+</body>
+</html>
